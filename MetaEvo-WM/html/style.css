@@ -1,0 +1,47 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    position: absolute;
+    top: -1%;
+    bottom: 100%;
+    right: -1%;
+    width: 193px;
+    height: 167px;
+    transform-style: preserve-3d; /* Enable 3D space */
+    backface-visibility: hidden; /* Hide the back face during flip */
+    transition: bottom 0.7s ease, opacity 0.7s ease;
+}
+
+/* Flip animation every 3 seconds */
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg); /* Start from no flip */
+    }
+    50% {
+        transform: rotateY(180deg); /* Half flip */
+    }
+    100% {
+        transform: rotateY(360deg); /* Full flip */
+    }
+}
+
+header {
+    opacity: 0.8;
+}
+
+header img {
+    width: 193px;
+    height: 167px;
+}
+
+/* Continuous flip animation */
+#container {
+    animation: flip 5s infinite ease-in-out; /* Apply continuous flip every 3 seconds */
+}
